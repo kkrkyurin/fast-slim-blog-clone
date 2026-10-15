@@ -2418,7 +2418,9 @@ Crew IKAELLA · dancer Rael
 (function () {
   var q = location.search.replace(/^\?/, '');
   var params = new URLSearchParams(q);
-  if (!q) { params.set('utm_source', 'blog'); params.set('utm_medium', 'bridge'); params.set('vk_route', 'bridge'); }
+  // 이 블로그 = 20대 급한감량 → 직접/오가닉 유입 기본 군집 inf-general(일반다이어트).
+  // 다른 페르소나 블로그는 각자 vk_lc로: 예신 ssn-event·산후 p-postpartum·갱년기 p-meno·남성 p-male
+  if (!q) { params.set('utm_source', 'blog'); params.set('utm_medium', 'bridge'); params.set('vk_route', 'bridge'); params.set('vk_lc', 'inf-general'); }
   Array.prototype.forEach.call(
     document.querySelectorAll('a[href*="velkar.co.kr/product/"]'),
     function (a) {
