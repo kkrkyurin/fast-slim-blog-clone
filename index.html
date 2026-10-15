@@ -2412,5 +2412,23 @@ Crew IKAELLA · dancer Rael
 })();
 </script>
 
+<script>
+/* 블로그→상품상세 유입추적: 블로그 유입 UTM(vk_lc 등)을 상품링크로 전달.
+   파라미터 없는 직접유입은 utm_source=blog 기본값으로 direct 집계 방지 */
+(function () {
+  var q = location.search.replace(/^\?/, '');
+  var params = new URLSearchParams(q);
+  if (!q) { params.set('utm_source', 'blog'); params.set('utm_medium', 'bridge'); params.set('vk_route', 'bridge'); }
+  Array.prototype.forEach.call(
+    document.querySelectorAll('a[href*="velkar.co.kr/product/"]'),
+    function (a) {
+      var u = new URL(a.href);
+      params.forEach(function (v, k) { u.searchParams.set(k, v); }); // product_no 보존, utm 덮어쓰기
+      a.href = u.toString();
+    }
+  );
+})();
+</script>
+
 </body>
 </html>
