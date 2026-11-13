@@ -2,6 +2,12 @@
 <html lang="ko">
 <head>
 <meta charset="utf-8">
+<script>
+/* 광고 표시(utm_·vk_·n_·NaPm) 없이 직접 들어온 방문자는 새 디자인 홈(/)으로. 광고 유입은 이 페이지 그대로. 홈은 광고 표시 있을 때만 여기로 보내므로 루프 없음. */
+(function () {
+  if (!/[?&](utm_|vk_|n_|NaPm)/.test(location.search)) location.replace('/' + location.hash);
+})();
+</script>
 <link rel="icon" href="/favicon.ico" sizes="any">
 <link rel="icon" type="image/svg+xml" href="/favicon.svg">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
