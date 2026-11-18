@@ -7,9 +7,9 @@
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="192x192" href="/favicon-192.png">
 <script>
-/* 광고 유입(utm_·vk_·n_ 파라미터)은 기존 블로그 랜딩(/review/)으로 보냄 — 파워링크 연결URL이 전부 홈(/?utm…)이라서. */
+/* 네이버 광고 유입만 지예 블로그(/review/)로 — 네이버 추적값(n_media·n_query·n_rank·n_ad_group·n_ad·NaPm) 또는 utm_source=naver. 그 외(직접·봇 UTM 등)는 홈 유지. 2026-11-18 규린님 지시 */
 (function () {
-  if (/[?&](utm_|vk_|n_)/.test(location.search)) location.replace('/review/' + location.search + location.hash);
+  if (/[?&](n_media|n_query|n_rank|n_ad_group|n_ad|NaPm)=|[?&]utm_source=naver(&|$)/.test(location.search)) location.replace('/review/' + location.search + location.hash);
 })();
 </script>
 <!-- Google Tag Manager -->
@@ -84,17 +84,5 @@ h1{font-size:clamp(34px,5vw,56px);line-height:1.18;letter-spacing:-.02em;margin:
 전화 : 070-5001-3151 | 사업자등록번호 : 629-88-02340 | 통신판매업신고 : 제 2024-서울금천-0936 호 <a href="https://www.ftc.go.kr/bizCommPop.do?wrkr_no=6298802340" style="color:inherit">[사업자정보확인]</a><br>
 공식몰 <a href="https://www.velkar.co.kr/" style="color:inherit">https://www.velkar.co.kr</a> · © 벨카르 velkar. All rights reserved.
 </footer>
-<!-- [VK-NAVER-CTS] 네이버 전환추적(s_117189698120) 콘텐츠보기 — 유입 시점 1회. GFA 검수(11/18 NHN 안내) 대응. 공통 스크립트는 GTM-NZ3R4J9D. -->
-<script type="text/javascript" src="//wcs.naver.net/wcslog.js"></script>
-<script type="text/javascript">
-if (!wcs_add) var wcs_add = {};
-wcs_add["wa"] = "s_117189698120";
-if (window.wcs) {
-  wcs.inflow("velkar.co.kr");
-  var _conv = {};
-  _conv.type = "view_content";
-  wcs.trans(_conv);
-}
-</script>
 </body>
 </html>
