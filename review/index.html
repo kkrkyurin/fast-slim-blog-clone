@@ -26,6 +26,12 @@ body{margin:0;font:14px system-ui,-apple-system,sans-serif;background:#fff}
 img{max-width:100%}
 [hidden]{display:none!important}
 </style>
+<style id="vk-reactbar-css">
+.vk-rb{display:flex;align-items:center;height:100%;padding:0 0 0 6px;cursor:default;-webkit-user-select:none;user-select:none;}
+.vk-rb .it{display:flex;align-items:center;margin-right:20px;color:#333;font-size:13px;line-height:27px;}
+.vk-rb svg{width:27px;height:27px;display:block;flex:none;margin-right:4px;}
+.vk-rb .it:last-child svg{margin-right:0;}
+</style>
 </head>
 <body>
 <!-- Google Tag Manager (noscript) -->
@@ -199,6 +205,7 @@ body{margin:0;background:#fff}
 <!-- _BLOG_CONTENTS_HEADER_TAIL -->
     <!-- SE_DOC_HEADER_END -->
     <div class="se-main-container">
+<p class="vk-disclosure se-ff-nanumgothic" style="margin:0 0 18px;padding:0 20px;font-family:se-nanumgothic,inherit;font-size:12px;line-height:1.6;color:#8b1a1a;text-align:left;word-break:keep-all;">본 글은 실제 고객의 제품 사용 후기글로, 광고에 사용되는 조건으로 6개월치의 제품을 보상하였습니다. 본 광고는 공정거래위원회의 관련 법령을 준수함을 네이버가 검토하였습니다.</p>
                 <div class="se-component se-text se-l-default" id="SE-dbf446f7-e611-4e1d-aaf8-582ec23f9f5e">
                     <div class="se-component-content">
                         <div class="se-section se-section-text se-l-default">
@@ -2306,7 +2313,7 @@ body{margin:0;background:#fff}
     ['ProfileBuddyButton',      HOME],
     ['PostBase__link',          HOME]
   ];
-  var INERT = ['se-module-image','se-module-image-link','_smallFont', '_bigFont', 'PostCarouselBlock__prev_btn', 'PostCarouselBlock__next_btn'];
+  var INERT = ['Interact__interact_section','se-module-image','se-module-image-link','_smallFont', '_bigFont', 'PostCarouselBlock__prev_btn', 'PostCarouselBlock__next_btn'];
 
   Array.prototype.forEach.call(document.querySelectorAll('a[href^="http"]'), function (a) {
     a.target = '_blank'; a.rel = 'noopener';
@@ -2347,17 +2354,16 @@ body{margin:0;background:#fff}
 })();
 </script>
 
-<!-- [VK-NAVER-CTS] 네이버 전환추적(s_117189698120) 콘텐츠보기 — 유입 시점 1회. GFA 검수(11/18 NHN 안내) 대응. 공통 스크립트는 GTM-NZ3R4J9D. -->
-<script type="text/javascript" src="//wcs.naver.net/wcslog.js"></script>
-<script type="text/javascript">
-if (!wcs_add) var wcs_add = {};
-wcs_add["wa"] = "s_117189698120";
-if (window.wcs) {
-  wcs.inflow("velkar.co.kr");
-  var _conv = {};
-  _conv.type = "view_content";
-  wcs.trans(_conv);
-}
+<script>
+/* 하단 반응 바: 공감·댓글·공유 아이콘 크기·간격·세로정렬 통일, 클릭 안 됨 — 2026-11-18 규린님 참고 캡처 기준 */
+(function () {
+  var A = 'fill="none" stroke="#333" stroke-width="1.7" stroke-linejoin="round" stroke-linecap="round"';
+  var H = '<svg viewBox="0 0 24 24" ' + A + '><path d="M12 20.3S3.2 15 3.2 8.9A4.6 4.6 0 0 1 12 6.8a4.6 4.6 0 0 1 8.8 2.1C20.8 15 12 20.3 12 20.3z"/></svg>';
+  var C = '<svg viewBox="0 0 24 24" ' + A + '><path d="M12 2.8a9.2 9.2 0 1 1-4.5 17.2L3.3 21.2l1.3-3.9A9.2 9.2 0 0 1 12 2.8z"/><circle cx="8" cy="12" r="1.1" fill="#333" stroke="none"/><circle cx="12" cy="12" r="1.1" fill="#333" stroke="none"/><circle cx="16" cy="12" r="1.1" fill="#333" stroke="none"/></svg>';
+  var S = '<svg viewBox="0 0 24 24" ' + A + '><path d="M2.3 9.2L21.7 3.2 14.6 21.2 11.3 13z"/><path d="M11.3 13L21.7 3.2"/></svg>';
+  var html = '<div class="vk-rb"><span class="it">' + H + '412</span><span class="it">' + C + '10</span><span class="it">' + S + '</span></div>';
+  Array.prototype.forEach.call(document.querySelectorAll('.Interact__interact_section--vWRCb'), function (sec) { sec.innerHTML = html; });
+})();
 </script>
 </body>
 </html>
