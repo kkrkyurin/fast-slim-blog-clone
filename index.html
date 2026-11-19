@@ -45,6 +45,10 @@ h1{font-size:clamp(34px,5vw,56px);line-height:1.18;letter-spacing:-.02em;margin:
 .btn-buy{display:inline-block;background:var(--gold);color:var(--ink);font-weight:700;text-decoration:none;padding:16px 28px;border-radius:4px}
 .btn-buy:hover{filter:brightness(.95)}
 .btn-buy:focus-visible{outline:2px solid var(--ink);outline-offset:3px}
+.cta{display:flex;flex-wrap:wrap;gap:10px}
+.btn-review{display:inline-block;background:transparent;color:var(--ink);font-weight:700;text-decoration:none;padding:15px 27px;border:1px solid var(--ink);border-radius:4px}
+.btn-review:hover{background:rgba(12,10,8,.04)}
+.btn-review:focus-visible{outline:2px solid var(--ink);outline-offset:3px}
 .shot{background:#fff;border:1px solid var(--hair);border-radius:12px;overflow:hidden}
 .mood{margin:0 0 72px}
 .mood img{width:100%;aspect-ratio:1920/900;object-fit:cover}
@@ -65,7 +69,10 @@ h1{font-size:clamp(34px,5vw,56px);line-height:1.18;letter-spacing:-.02em;margin:
       <p class="label">Velkar · Official</p>
       <h1>벨카르를<br>만나보세요</h1>
       <p class="lead">벨카르 공식몰에서 구매하실 수 있습니다.</p>
-      <a class="btn-buy" href="https://velkar.co.kr/product/detail.html?product_no=13">벨카르 구매하기 →</a>
+      <div class="cta">
+        <a class="btn-buy" href="https://velkar.co.kr/product/detail.html?product_no=13">벨카르 구매하기 →</a>
+        <a class="btn-review" href="/review/?vk_from=home">실제 후기 보기</a>
+      </div>
     </div>
     <div class="shot"><img src="a/vk-box.webp" width="1100" height="1100" alt="벨카르 제품 박스와 용기"></div>
   </section>
