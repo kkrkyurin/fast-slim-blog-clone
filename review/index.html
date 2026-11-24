@@ -2456,17 +2456,21 @@ body{margin:0;background:#fff}
   Array.prototype.forEach.call(document.querySelectorAll('.Interact__interact_section--vWRCb'), function (sec) { sec.innerHTML = html; });
 })();
 </script>
-<!-- [VK-NAVER-CTS] 네이버 전환추적(s_117189698120) 콘텐츠보기 — 유입 시점 1회. GFA 검수(11/18 NHN 안내) 대응. 공통 스크립트는 GTM-NZ3R4J9D. -->
+<!-- [VK-NAVER-CTS] 네이버 전환추적(s_117189698120) 콘텐츠보기 = 우리 상품 링크 클릭 시 1회(구매하러 가는 사람). 「벨카르 구매하기」(a.btn-buy)는 GTM 태그가 담당해 여기선 제외. 11/24 규린님 지시. 지우지 말 것 -->
 <script type="text/javascript" src="//wcs.naver.net/wcslog.js"></script>
 <script type="text/javascript">
 if (!wcs_add) var wcs_add = {};
 wcs_add["wa"] = "s_117189698120";
-if (window.wcs) {
-  wcs.inflow("velkar.co.kr");
-  var _conv = {};
-  _conv.type = "view_content";
-  wcs.trans(_conv);
-}
+if (window.wcs) wcs.inflow("velkar.co.kr");
+(function () {
+  var sent = false;
+  document.addEventListener('click', function (e) {
+    var a = e.target && e.target.closest ? e.target.closest('a[href*="velkar.co.kr/product/"]') : null;
+    if (!a || sent || !window.wcs || a.matches('a.btn-buy')) return;
+    sent = true;
+    wcs.trans({ type: "view_content" });
+  }, true);
+})();
 </script>
 </body>
 </html>
