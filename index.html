@@ -91,7 +91,7 @@ h1{font-size:clamp(34px,5vw,56px);line-height:1.18;letter-spacing:-.02em;margin:
 전화 : 070-5001-3151 | 사업자등록번호 : 629-88-02340 | 통신판매업신고 : 제 2024-서울금천-0936 호 <a href="https://www.ftc.go.kr/bizCommPop.do?wrkr_no=6298802340" style="color:inherit">[사업자정보확인]</a><br>
 공식몰 <a href="https://www.velkar.co.kr/" style="color:inherit">https://www.velkar.co.kr</a> · © 벨카르 velkar. All rights reserved.
 </footer>
-<!-- [VK-NAVER-CTS] 네이버 전환추적(s_117189698120) 콘텐츠보기 = 우리 상품 링크 클릭 시 1회(구매하러 가는 사람). 「벨카르 구매하기」(a.btn-buy)는 GTM 태그가 담당해 여기선 제외. 11/24 규린님 지시. 지우지 말 것 -->
+<!-- [VK-NAVER-CTS] 네이버 전환추적(s_117189698120) 콘텐츠보기 = 우리 상품 링크(「벨카르 구매하기」 포함) 클릭 시 페이지당 1회 — 구매하러 가는 사람만. 11/24 규린님 지시. 지우지 말 것 -->
 <script type="text/javascript" src="//wcs.naver.net/wcslog.js"></script>
 <script type="text/javascript">
 if (!wcs_add) var wcs_add = {};
@@ -101,7 +101,7 @@ if (window.wcs) wcs.inflow("velkar.co.kr");
   var sent = false;
   document.addEventListener('click', function (e) {
     var a = e.target && e.target.closest ? e.target.closest('a[href*="velkar.co.kr/product/"]') : null;
-    if (!a || sent || !window.wcs || a.matches('a.btn-buy')) return;
+    if (!a || sent || !window.wcs) return;
     sent = true;
     wcs.trans({ type: "view_content" });
   }, true);
