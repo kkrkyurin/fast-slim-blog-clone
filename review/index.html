@@ -200,7 +200,7 @@ body{margin:0;background:#fff}
     <!-- SE_DOC_HEADER_END -->
     <div class="se-main-container">
 <p class="vk-disclosure se-ff-nanumgothic" style="display:none;margin:0 0 18px;padding:0 20px;font-family:se-nanumgothic,inherit;font-size:15px;font-weight:700;line-height:1.6;color:#8b1a1a;text-align:left;word-break:keep-all;">본 글은 실제 고객의 제품 사용 후기글로, 광고에 사용되는 조건으로 6개월치의 제품을 보상하였습니다. 본 광고는 공정거래위원회의 관련 법령을 준수함을 네이버가 검토하였습니다.</p>
-<script>/* 고지문: 항상 표시 — 2026-11-25 규린님 "utm_source 값 있으면 전부 블로그로", 광고로 들어온 사람 모두 고지문 */(function(){var e=document.querySelector(".vk-disclosure");if(e)e.style.display="block";})();</script>
+<script>/* 고지문: 항상 표시, 단 바이럴(utm_medium=viral, 예: 인스타 DM 링크)만 숨김 — 2026-11-26 규린님 */(function(){var e=document.querySelector(".vk-disclosure");if(e)e.style.display=/[?&]utm_medium=viral(&|$)/.test(location.search)?"none":"block";})();</script>
                 <div class="se-component se-text se-l-default" id="SE-dbf446f7-e611-4e1d-aaf8-582ec23f9f5e">
                     <div class="se-component-content">
                         <div class="se-section se-section-text se-l-default">
