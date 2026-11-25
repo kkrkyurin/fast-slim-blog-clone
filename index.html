@@ -9,7 +9,7 @@
 <script>
 /* 네이버 광고 유입만 지예 블로그(/review/)로 — 네이버 추적값(n_media·n_query·n_rank·n_ad_group·n_ad·NaPm) 또는 utm_source=naver. 그 외(직접·봇 UTM 등)는 홈 유지. 2026-11-18 규린님 지시 */
 (function () {
-  if (/[?&](n_media|n_query|n_rank|n_ad_group|n_ad|NaPm)=|[?&]utm_source=naver(&|$)/.test(location.search)) location.replace('/review/' + location.search + location.hash);
+  if (/[?&](n_media|n_query|n_rank|n_ad_group|n_ad|NaPm)=|[?&]utm_source=[^&#]+/.test(location.search)) location.replace('/review/' + location.search + location.hash);
 })();
 </script>
 <!-- Google Tag Manager -->
